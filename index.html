@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>3dVR</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+        "three/addons/gui": "https://unpkg.com/three@0.160.0/examples/jsm/libs/lil-gui.module.min.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="ui-top">
+    <div class="panel panel-card active-card">
+      <b>Modelo principal</b>
+      <div class="input-group">
+        <input type="text" id="url-input" placeholder="URL (.glb, .gltf, GitHub Raw, Sketchfab)">
+        <button id="load-url-btn" class="btn">Cargar URL</button>
+        <div class="file-input-wrapper">
+          <button class="btn" style="width: 100%; background: #28a745;">Cargar archivo local</button>
+          <input type="file" id="file-input" accept=".glb,.gltf">
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-card">
+      <b>Añadir objeto/modelo adicional</b>
+      <div class="input-group">
+        <input type="text" id="object-url-input" placeholder="URL del objeto (.glb, .gltf)">
+        <button id="add-object-url-btn" class="btn" style="background: #17a2b8;">Añadir objeto/modelo por URL</button>
+        <div class="file-input-wrapper">
+          <button class="btn" style="width: 100%; background: #17a2b8;">Añadir objeto/modelo local</button>
+          <input type="file" id="object-file-input" accept=".glb,.gltf">
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-card">
+      <b>Fondo</b>
+      <div class="input-group">
+        <input type="text" id="bg-url-input" placeholder="URL de la imagen (JPG/PNG)">
+        <button id="bg-url-btn" class="btn" style="background: #6f42c1;">Aplicar fondo por URL</button>
+        <div class="file-input-wrapper">
+          <button class="btn" style="width: 100%; background: #6f42c1;">Cargar fondo local</button>
+          <input type="file" id="bg-file-input" accept="image/*">
+        </div>
+        <button id="bg-reset-btn" class="btn" style="background: #6c757d; margin-top: 4px;">Quitar fondo</button>
+      </div>
+    </div>
+  </div>
+  <div id="ui-bottom">
+    <div id="gui-container" class="panel-card"></div>
+    <div id="info" class="panel panel-card">
+      <b>Controles y navegación:</b><br>
+      • <b>PC:</b> Click Izq: Rotar | Click Der: Mover | Rueda: Zoom<br>
+      • <b>Teclado:</b> WASD: Rotar | Flechas: Mover | Q: Aumentar Zoom | E: Reducir zoom<br>
+      • <b>Móvil:</b> 1 dedo: Rotar | 2 dedos: Mover y Zoom<br>
+      • <b>Doble clic:</b> Seleccionar hueso/objeto.
+    </div>
+  </div>
+  <div id="bottom-buttons">
+    <div id="nav-menu-bar">
+      <button id="prev-menu-btn" class="nav-arrow-btn">←</button>
+      <span id="menu-indicator">1 / 5</span>
+      <button id="next-menu-btn" class="nav-arrow-btn">→</button>
+    </div>
+    <button id="toggle-ui-btn" class="btn floating-btn"><span id="toggle-text">Ocultar IU</span></button>
+  </div>
+  <iframe id="sketchfab-iframe" title="Sketchfab Viewer" allow="autoplay; fullscreen; xr-spatial-tracking"></iframe>
+  <script src="js/module.js" type="module"></script>
+</body>
+</html>
