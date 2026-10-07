@@ -761,7 +761,7 @@ window.addEventListener('resize', () => {
     }
 });
 
-const initialUrl = 'https://raw.githubusercontent.com/Pokemon-3D-api/assets/main/models/opt/regular/727.glb';
+const initialUrl = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Duck/glTF-Binary/Duck.glb';
 document.getElementById('url-input').value = initialUrl;
 loadModelSource(initialUrl);
 
