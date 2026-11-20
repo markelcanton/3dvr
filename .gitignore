@@ -1,3 +1,4 @@
+# Omit directories and files
 .DS_Store
 Thumbs.db
 .vscode/
